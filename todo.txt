@@ -1,8 +1,9 @@
 1. Random digits interface
-    - Add functionality to the digits_gui.py GUI to actually show the image of a random digit
-      by embedding a matplotlib plot in a tkinter window
+    - Make show digit button better
+    - Making the text larger
+    - Adding an explanation of the displayed labels
+    - Trim the area around the plot
     - Add an option to only show incorrect digits in the window?
-    - Enable classifier.get_random_digit() to return an image from the CV set
 2. Paint interface
     - Create a GUI that allows the user to draw a digit 0-9 and receive the mlp's
       prediction on their drawing.
