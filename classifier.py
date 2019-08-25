@@ -1,12 +1,3 @@
-# AUTHOR: Konrad, among others
-
-
-
-
-
-
-
-
 import random
 import gzip
 import io
@@ -114,20 +105,23 @@ class Classifier(object):
     # Returns a triple containing a random array of image_data, its predicted label
     # and its known label in that order
     def get_random_digit(self):
-        rand_index = random.randint(0, 40000)
+        rand_index = random.randint(0, 60000)
         image_data = None
+        image_data_array = []
         if rand_index < 40000:
             image_data = self.training_images[rand_index]
             gold_label = self.training_labels[rand_index]
             predicted_label = self.mlp.predict([image_data])
-
-            image_data_array = []
             for i in range(0, 28):
                 image_data_array.append(image_data[i*28:(i+1)*28])
             return (image_data_array, gold_label, predicted_label)
         else:
-            # TODO -- allow an image from the CV set to be selected
-            return None
+            image_data = self.cv_images[rand_index-40000]
+            gold_label = self.cv_labels[rand_index-40000]
+            predicted_label = self.mlp.predict([image_data])
+            for i in range(28):
+                image_data_array.append(image_data[i*28:(i+1)*28])
+            return (image_data_array, gold_label, predicted_label)
 
 
     # Displays this example as a grayscale image:
