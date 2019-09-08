@@ -4,6 +4,7 @@
     - Adding an explanation of the displayed labels
     - Trim the area around the plot
     - Add an option to only show incorrect digits in the window?
+    - Show output of hidden layer in a second image in the GUI.
 2. Paint interface
     - Create a GUI that allows the user to draw a digit 0-9 and receive the mlp's
       prediction on their drawing.
